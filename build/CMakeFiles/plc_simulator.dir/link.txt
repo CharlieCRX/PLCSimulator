@@ -1,1 +1,0 @@
-/usr/lib/ccache/c++ -Wl,--dependency-file=CMakeFiles/plc_simulator.dir/link.d CMakeFiles/plc_simulator.dir/src/main.cpp.o -o plc_simulator
