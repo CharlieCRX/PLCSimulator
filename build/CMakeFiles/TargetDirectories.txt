@@ -1,0 +1,3 @@
+/home/crx/study/plc_simulator/build/CMakeFiles/plc_simulator.dir
+/home/crx/study/plc_simulator/build/CMakeFiles/edit_cache.dir
+/home/crx/study/plc_simulator/build/CMakeFiles/rebuild_cache.dir
