@@ -58,3 +58,13 @@ TEST(RegisterManager, ReadBlock_DefaultValue)
   EXPECT_EQ(result[1], 0);
   EXPECT_EQ(result[2], 0);
 }
+
+
+TEST(RegisterManager, ReadBlock_Empty)
+{
+  RegisterManager rm;
+
+  auto result = rm.readBlock(100, 0);
+
+  EXPECT_EQ(result.size(), 0);
+}
