@@ -28,3 +28,33 @@ TEST(RegisterManager, Overwrite)
 
   EXPECT_EQ(rm.read(100), 30);
 }
+
+
+TEST(RegisterManager, ReadBlock)
+{
+  RegisterManager rm;
+  rm.write(100, 10);
+  rm.write(101, 20);
+  rm.write(102, 30);
+
+  auto result = rm.readBlock(100, 3);
+
+  ASSERT_EQ(result.size(), 3);
+
+  EXPECT_EQ(result[0], 10);
+  EXPECT_EQ(result[1], 20);
+  EXPECT_EQ(result[2], 30);
+}
+
+TEST(RegisterManager, ReadBlock_DefaultValue)
+{
+  RegisterManager rm;
+
+  rm.write(100, 10);
+
+  auto result = rm.readBlock(100, 3);
+
+  EXPECT_EQ(result[0], 10);
+  EXPECT_EQ(result[1], 0);
+  EXPECT_EQ(result[2], 0);
+}
