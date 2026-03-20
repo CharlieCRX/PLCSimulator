@@ -8,7 +8,7 @@ enable_testing()
 # 1. 定义一个库，包含所有的业务逻辑
 add_library(plc_core
   src/register_manager.cpp
-  # 如果以后有更多的 src/*.cpp，都加在这里
+  src/protocol/modbus_parser.cpp
 )
 
 # 2. 核心库需要包含 src 目录作为头文件路径
@@ -22,6 +22,7 @@ target_link_libraries(plc_simulator plc_core)
 add_executable(tests
   tests/test_main.cpp
   tests/test_register_manager.cpp
+  tests/test_modbus_parser.cpp
 )
 
 target_link_libraries(tests
